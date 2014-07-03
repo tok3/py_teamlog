@@ -15,14 +15,14 @@
 		</label>
 
 
-		<?php echo form_input('email', $this->input->post('email') ? $this->input->post('email') : 'tobias@mmsetc.de','id="email"')?>
+		<?php echo form_input('email', $this->input->post('email') ? $this->input->post('email') : '','id="email"')?>
 
 	</div>
 </div>
 	 <div class="row">
 	<div class="large-12 columns">
 		<label for="password"><?php echo lang('global:password') ?></label>
-		<input type="password" id="password" name="password" value="tester" maxlength="20" />
+		<input type="password" id="password" name="password" value="" maxlength="20" />
 	</div>
 </div>
 	<div class="row">
