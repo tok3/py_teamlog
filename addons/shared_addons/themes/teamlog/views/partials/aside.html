@@ -1,0 +1,20 @@
+{{ if  {navigation:links group="sidebar"}  !== '' OR  {widgets:area slug="sidebar"}  !== ''}}
+<aside class="hide-for-print">
+	
+
+{{ if  {navigation:links group="sidebar"} !== '' }}
+	<h3>Navigation&nbsp;</h3>
+	<ul class="side-nav">
+		{{ navigation:links group="sidebar" }}
+		
+		{{if user:logged_in}}
+		{{navigation:links group="sidebar-logged-in"}}
+		{{else}}
+		{{navigation:links group="sidebar-logged-out"}}
+		{{endif}}
+	</ul>
+	{{ endif }}
+	{{ widgets:area slug="sidebar" }}
+</aside>
+{{ endif }}
+	

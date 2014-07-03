@@ -1,0 +1,72 @@
+
+{{if theme:options:footer_width == 'content'}} 
+<div class="row hcw">
+	{{ endif }}
+	<footer id="footer" class="hide-for-print">
+		 <div class="row">
+    <div class="small-12 medium-4 columns fSocialCol">
+
+<!--
+	add, delete or modify links.
+	social icons are foundation glyphicons http://zurb.com/playground/foundation-icon-fonts-3
+-->
+<div class="social">
+
+	<a class="fi-social-twitter size-24" href="" title="Follow us on Twitter" target="_blank">&nbsp;</a>
+	<a class="fi-social-forrst size-24" href="" title="Follow us on Forrst" target="_blank">&nbsp;</a>
+	<a class="fi-social-facebook size-24" href="" title="Follow us on Facebook" target="_blank">&nbsp;</a>
+	<a class="fi-social-dribbble size-24" href="" title="Follow us on Dribbble" target="_blank">&nbsp;</a>
+	<a class="fi-social-vimeo size-24" href="" title="Follow us on Vimeo" target="_blank">&nbsp;</a>
+	<a class="fi-social-youtube size-24" href="" title="Follow us on Youtoube" target="_blank">&nbsp;</a>
+	
+</div>	
+
+</div>
+<div class="small-12 medium-8 columns fNavCol">
+	
+  <span id="footerNav">
+  	 {{ navigation:links group="footer" tag="span" separator=" "}} 
+</span>
+  <p class="copyright">&copy; {{ settings:site_name }} {{ helper:date format="Y" }}</p>
+	
+  
+</div><!-- /colums -->
+</div><!-- /row -->
+</footer>
+
+
+</div>
+<!-- /container -->
+
+<!-- JavaScript at the bottom for fast page loading -->
+								   
+<!-- Scripts -->
+
+{{ asset:js file="bower_components/foundation/js/foundation.min.js" group="site_js" }}
+{{ asset:js file="bower_components/foundation/js/foundation/foundation.topbar.js" group="site_js" }}
+
+{{ if { url:segments segment="1" } == '' AND theme:options:orbit == 'yes' }}
+{{ asset:js file="bower_components/foundation/js/foundation/foundation.orbit.js" group="site_js" }}
+{{ endif }}
+
+
+<!-- End Scripts -->
+  <script type="text/javascript">
+  //<![CDATA[
+
+  var footer_width = '{{theme:options:footer_width}}';
+  var sticky_footer = '{{theme:options:sticky_footer}}';
+var BASE_URL = '<?php echo BASE_URL;?>';
+//]]>
+</script>
+
+{{ asset:js file="app.js" group="site_js" }}
+{{ asset:render group="site_js"}}
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  	<!--[if lt IE 7 ]>
+    	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    	<![endif]-->
+
+    </body>
+    </html>
